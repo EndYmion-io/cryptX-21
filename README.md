@@ -2,6 +2,8 @@
 
 Write-ups for 24-hour Capture The Flag event by Department of Electrical Engineering, IIT (BHU) Varanasi
 
+<a href="https://www.electricalfest.in/events/info/cryptx" target="_blank">Link</a>
+
 ## Overview
 ```
 Title                          Points   Flag
