@@ -9,7 +9,9 @@ First, the message is encoded in base64. Then, the ASCII values (in hexadecimal 
 
 Example: 
 Plain text: “Beispieltext”
+
 Base64(Plaintext) = “QmVpc3BpZWx0ZXh0”
+
 Converting each character into ASCII values in the hexadecimal base and concatenating them, we get “516d5670633342705a5778305a586830”
 This corresponds to the integer
 108235181207639582495826983402300008496
