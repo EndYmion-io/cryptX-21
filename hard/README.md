@@ -53,3 +53,8 @@ B5 : b'\x7fh]/'
 [encrypt.zip file](./encrypt.zip)
 
 Submit the FLAG obtained
+
+**Flag**
+```
+cryptX{kR15Hn4m4Ch4R1 5R1kk4N7h}
+```
