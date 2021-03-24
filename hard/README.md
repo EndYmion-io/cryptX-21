@@ -56,7 +56,44 @@ B5 : b'\x7fh]/'
 
 Submit the FLAG obtained
 
+**Solution**
+
 **Flag**
 ```
 cryptX{kR15Hn4m4Ch4R1 5R1kk4N7h}
+```
+## Jack n Jill
+**Chall**
+```
+Jack and Jill went up the hill. So, that they could get a better network to attend the CryptX workshop. In the workshop, they learnt that it is possible to create truly unbreakable ciphertexts if you link a stream of true random numbers to the plaintext. The link operation can be created bytewise when using the Vigenère cipher (for example addition of the corresponding numerical values modulo 26) or by using XOR (exclusive OR of the individual bits).
+Since then Jack and Jill have encrypted their messages to each other using the Vigenère cipher to combine the different characters. Their plaintexts only consist of the 26 capital letters of the alphabet. As random numbers, they use a random number sequence.
+For this challenge, A = 0, B = 1,......, Z = 25
+Example-
+Plaintext - TEST = (19 4 23 19)
+Key Stream = 16, 8, 17, 23, 0, 56,.........
+Sample ciphertext:
+(19+16) mod 26 = 9 = J
+(4+8) mod 26 = 12 = M
+(23+17) mod 26 = 14 = O
+(19+23) mod 26 = 16 = Q
+Ciphertext - J M O Q
+
+This method is very easy, but the difficulty lies in generating a truly random key-stream. So, Jack and Jill decided to keep things simple and used Pi = 3.14159265358979323846……… as the infinite, random number sequence. They also agreed to use the offset in the keystream as key. 
+For example, offset 7 is the digit “6” (bolded).
+From then on they took the following keystream and always grouped 2 digits as one number for the random number sequence. With an offset of 7, the keystream would be 53, 58, 97, 93, 23, …
+Also, to ensure that the method did not become too complex, they mutually agreed that the offset will not be greater than 200, and also they will change the key often.
+
+You know the method, but not the key. Can you still find the flag?
+Submit the flag by wrapping it within cryptX{}. The Flag is a single word in UPPERCASE without space.
+```
+> jack_n_jill.txt
+```
+Y W E X D Z S H Q G E G A J B V H X M W B O T X E D C H P U C M T W L P Z I E H H K N O G D M E D B H N N E P J T E I K X V A B F R R P C P K U Z W Q U Y H P C D U G J B I K C A U X G Z A W S Q V L J V Z X J K N N U Z R A U X B H F Q W X Y Q Z
+```
+
+**Solution**
+
+**Flag**
+```
+cryptX{GANGULY}
 ```
