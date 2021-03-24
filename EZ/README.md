@@ -28,7 +28,7 @@ Step4: All the parts are merged to form the ciphertext.
 
 See example.jpg for an illustrative example of encryption of plaintext```CRYPTO```.
 
-![]()
+![](./example.jpg)
 
 The ciphertext given below is encrypted using the above scheme
 ```mNsnhHnrh411DD3940```
