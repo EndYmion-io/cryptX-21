@@ -75,7 +75,7 @@ cryptX{rohitsharma}
 **Chall**
 
 Just submit what you got 
-```
+```python
 import string
  
 cipher = bytes.fromhex("02101a11163b1a373c5530503e3a5333532d261f")
@@ -96,7 +96,7 @@ cryptX{U_4R3_X0R1NG}
 
 ## July Us College
 **Chall**
-```
+```python
 import string
 
 LOWERCASE_OFFSET = ord("a")
