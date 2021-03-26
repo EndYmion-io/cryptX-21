@@ -44,6 +44,22 @@ Submit the obtained plaintext in CAPITAL LETTERS by wrapping within cryptX{}
 cryptX{HARMANPREET}
 ```
 
+## Key Bored
+**Chall**
+
+Uff! Due to the pandemic, I spend most of the time in my room. I was very bored. So, one fine evening I decided to visit one of my friend’s home. We were playing video games and enjoying supper. Suddenly, I remembered that I had to send an important message to my prof. So, I used her LAPTOP to send the message. But it all got messed up. Can you retrieve the correct message for my prof?
+```
+(( !!$ !@! !!@ !!^ ** !@# %# !)( *@ &# %% &# (% !)( %@ &* ^* &@ %@ !!) %@ !@%
+```
+Submit the FLAG obtained (without spaces)
+
+**Solution**
+
+**Flag**
+```
+cryptX{5mRI7I_m4NDH4n4}
+```
+
 ## Roadside Adventure
 **Chall**
 ```
