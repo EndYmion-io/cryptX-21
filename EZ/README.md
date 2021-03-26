@@ -53,4 +53,88 @@ Submit the flag by wrapping it within cryptX{}
 
 **Flag**
 ```
+cryptX{4J1NKY4_R5H4N3}
+```
+
+## Vadapav obviously!
+**Chall**
+
+Decode:
+
+cryptX{**w**hat **w**o**uld** you **cho**o**s**e if **I** ga**ve** **y**ou **a** cho**ice** in a ba**c**on a**n**d **a** **v**adapav?}
+
+
+**Solution**
+
+**Flag**
+```
+cryptX{rohitsharma}
+```
+
+## Redundant Key
+**Chall**
+
+Just submit what you got 
+```
+import string
+ 
+cipher = bytes.fromhex("02101a11163b1a373c5530503e3a5333532d261f")
+ 
+def byte_xor(ba1, ba2):
+    return bytes([_a ^ _b for _a, _b in zip(ba1, ba2)])
+
+for i in string.printable:
+    print(i, byte_xor(cipher, bytes(i, 'utf8')))
+```
+
+**Solution**
+
+**Flag**
+```
+cryptX{U_4R3_X0R1NG}
+```
+
+## July Us College
+**Chall**
+```
+import string
+
+LOWERCASE_OFFSET = ord("a")
+ALPHABET = string.ascii_lowercase[:16]
+
+def b16_encode(plain):
+	enc = ""
+	for c in plain:
+		binary = "{0:08b}".format(ord(c))
+		enc += ALPHABET[int(binary[:4], 2)]
+		enc += ALPHABET[int(binary[4:], 2)]
+	return enc
+
+def shift(c, k):
+	t1 = ord(c) - LOWERCASE_OFFSET
+	t2 = ord(k) - LOWERCASE_OFFSET
+	return ALPHABET[(t1 + t2) % len(ALPHABET)]
+
+flag = "redacted"
+key = "redacted"
+assert all([k in ALPHABET for k in key])
+assert len(key) == 1
+
+b16 = b16_encode(flag)
+enc = ""
+for i, c in enumerate(b16):
+	enc += shift(c, key[i % len(key)])
+print(enc)
+```
+ciphertext:
+```
+epabdfecaodbepabedaodb
+```
+Submit your answer by wrapping it with cryptX{}
+
+**Solution**
+
+**Flag**
+```
+cryptX{r4hu1dr4v1d}
 ```
