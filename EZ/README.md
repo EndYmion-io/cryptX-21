@@ -51,6 +51,11 @@ Submit the flag by wrapping it within cryptX{}
 
 **Solution**
 
+It's a basic RSA encryption problem where values of encryption key (e), modulus (n) and ciphertext (c) are given. We just have to decrypt c using RSA algorithm to get plaintext m.
+Firstly, as value of n is small, we can find its prime factors p and q easily through <a href="http://factordb.com">factordb.com</a>
+
+Refer to <a href="https://medium.com/@kaipakrishna380/writeup-for-rsa-1-cryptography-ctf-challenge-n00bctf-c4fbae5d7b08">this</a> writeup for writing step by step code.
+
 **Flag**
 ```
 cryptX{4J1NKY4_R5H4N3}
