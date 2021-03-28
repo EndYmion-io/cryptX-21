@@ -8,6 +8,13 @@ Xlmw irgvCtxih qiwweki wlepp gpevmjC lsA RSX xs irgvCtx e qiwweki xsheC! Izir mj
 
 **Solution**
 
+Here the trick was 62 = 26 (Lower Case)+ 26 (Upper Case) + 10 (Decimal digits)
+This whole set must be considered as the character space.
+For eg – If y is shifted by 3 it changes to B instead of b
+Doing so on shifting by 4 we get
+```
+This encrypted message shall clarify how NOT to encrypt a message today! Even if it was sufficient about 2000 years ago, or to be more precise in the Year 44 BC, nowadays it is not. Today each so-called Script Kiddie would be able to get sensitive information if they were encrypted this way.
+```
 **Flag**
 ```
 cryptX{This encrypted message shall clarify how NOT to encrypt a message today! Even if it was sufficient about 2000 years ago, or to be more precise in the Year 44 BC, nowadays it is not. Today each so-called Script Kiddie would be able to get sensitive information if they were encrypted this way.}
@@ -51,10 +58,16 @@ Submit the flag by wrapping it within cryptX{}
 
 **Solution**
 
-It's a basic RSA encryption problem where values of encryption key (e), modulus (n) and ciphertext (c) are given. We just have to decrypt c using RSA algorithm to get plaintext m.
-Firstly, as value of n is small, we can find its prime factors p and q easily through <a href="http://factordb.com">factordb.com</a>
-
-Refer to <a href="https://medium.com/@kaipakrishna380/writeup-for-rsa-1-cryptography-ctf-challenge-n00bctf-c4fbae5d7b08">this</a> writeup for writing step by step code.
+By the capitalization of letters in the heading, we can observe that it is hinting towards RSA.
+In the flag.txt file we are given
+```
+e: 1
+c: 37207601978871992194562586639512228182470162740294525
+n: 245841236512478852752909734912575581815967630033049838269083 
+c = (p^e)mod(n)
+```
+Here since e is 1, p = c + n*i where i is any integer from 1.
+For i = 1 we get the flag.
 
 **Flag**
 ```
@@ -93,6 +106,11 @@ for i in string.printable:
 ```
 
 **Solution**
+
+Here we can see that the cipher text is being XOR’ed with some characters.
+Since we know the first 7 characters of the flag which is **cryptX{** we can XOR this with the cipher text to get the first 7 characters of the key.
+On doing so we get output to be **abcabca** which by the title of the challenge is repeating with the basic unit abc.
+Hence XORing it with a string of abc where it is repeated multiple times gives us the flag.
 
 **Flag**
 ```
