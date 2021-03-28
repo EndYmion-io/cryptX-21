@@ -64,6 +64,16 @@ Submit the FLAG obtained (without spaces)
 
 **Solution**
 
+By the hint “Key bored” Keyboard. We can see that the special characters are upper characters of digits in the keyboard. Hence we replace each character with its respective numbers which gives us – 
+```
+
+99 114 121 112 116 88 123 53 109 82 73 55 73 95 109 52 78 68 72 52 110 52 125
+
+```
+
+Converting the decimals to ascii gives us – 5mRI7I_m4NDH4n4
+
+
 **Flag**
 ```
 cryptX{5mRI7I_m4NDH4n4}
