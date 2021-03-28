@@ -29,6 +29,22 @@ c2=32061984916159260297657706111306184850672554462693420690419373059357537689131
 
 **Solution**
 
+The same message was encrypted with different public exponent but same modulus
+we can efficiently calculate the message if GCD(e1, e2) = 1
+
+Using extended euclid's algorithm we can find a and b such that
+a*e1 + b*e2 = 1
+
+Let
+c1 = pow(m, e1, n)
+c2 = pow(m, e2, n)
+
+then
+
+```python
+m = (pow(c1, a, n)*pow(c2, b, n)) % n
+```
+
 **Flag**
 ```
 cryptX{SuN1l_9AVaskAR}
@@ -57,6 +73,27 @@ B5 : b'\x7fh]/'
 Submit the FLAG obtained
 
 **Solution**
+
+key-lelo.txt: suggests an RSA encryption but with only one prime though the message was small just taking cube root was just fine. this gives the encryption key for rar file.
+
+we get encrypt.py file the logic was simple
+data was divided into of 4 bytes block and the cipher array is given by
+
+cipher[n] = XOR(plaintext[n], plaintext[n+2])
+
+since we know the first two blocks cryptX{k thus we can find rest
+
+```python
+
+XOR = lambda a, b: bytes([x^y for x,y in zip(a, b)])
+
+
+cipher = [b'1CL8', b'\x1al\x16_', b'\x11Y\x01\x1a', b'_kXf', b'r\x03_f', b'\x7fh]/']
+plaintext = [b'cryp', b'tX{k']
+
+for i in range(6):
+    plaintext.append(XOR(cipher[i], plaintext[i]))
+```
 
 **Flag**
 ```
@@ -92,6 +129,20 @@ Y W E X D Z S H Q G E G A J B V H X M W B O T X E D C H P U C M T W L P Z I E H 
 ```
 
 **Solution**
+
+the stream cipher is not secure as it is using the digits of pi which are known moreover the offset is only 200 so just need to brute force the 200 offsets and manually search for the plaintext
+
+```python
+digits = '14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535940812848111745028410270193852110555964462294895493038196442881097566593344612847564823378678316527120190914564856692346034861045432664821339360726024914127372458700660631558817488152092096282925409171536436789259036001133053054882046652138414695194151160943305727036575959195309218611738193261179310511854807446237996274956735188575272489122793818301194912'
+cipher = ['Y', 'W', 'E', 'X', 'D', 'Z', 'S', 'H', 'Q', 'G', 'E', 'G', 'A', 'J', 'B', 'V', 'H', 'X', 'M', 'W', 'B', 'O', 'T', 'X', 'E', 'D', 'C', 'H', 'P', 'U', 'C', 'M', 'T', 'W', 'L', 'P', 'Z', 'I', 'E', 'H', 'H', 'K', 'N', 'O', 'G', 'D', 'M', 'E', 'D', 'B', 'H', 'N', 'N', 'E', 'P', 'J', 'T', 'E', 'I', 'K', 'X', 'V', 'A', 'B', 'F', 'R', 'R', 'P', 'C', 'P', 'K', 'U', 'Z', 'W', 'Q', 'U', 'Y', 'H', 'P', 'C', 'D', 'U', 'G', 'J', 'B', 'I', 'K', 'C', 'A', 'U', 'X', 'G', 'Z', 'A', 'W', 'S', 'Q', 'V', 'L', 'J', 'V', 'Z', 'X', 'J', 'K', 'N', 'N', 'U', 'Z', 'R', 'A', 'U', 'X', 'B', 'H', 'F', 'Q', 'W', 'X', 'Y', 'Q', 'Z']
+
+for offset in range(201):
+    out = ''
+    for i, c in enumerate(cipher):
+        out += chr((((ord(c)-65)-int(digits[offset+2*i:offset+2*i+2]))%26) + 65)
+    print(out)
+```
+at offset 163 we get `WELLDONEYOUDESERVEAGREATROUNDOFAPPLAUSEONREACHINGHEREANDFINDINGTHECORRECTOFFSETSOASAREWARDIWILLTELLYOUTHATTHEFLAGISGANGULY`
 
 **Flag**
 ```
