@@ -159,6 +159,12 @@ Submit the flag by wrapping it with cryptX{}
 
 **Solution**
 
+Cipher is an array of integers
+A quick look at code suggests the cipher numbers are result after XORing the ASCII values of the characters and the sequence of Mersenne Prime.
+But since Mersenne Primes are rare therefore this code might take forever to run, to fasten it up use precalculated values readily avaiable on the web.
+
+[Mersenne primes](https://en.wikipedia.org/wiki/Mersenne_prime#List_of_known_Mersenne_primes) 
+
 **Flag**
 ```
 cryptX{more_primes_more_good}
