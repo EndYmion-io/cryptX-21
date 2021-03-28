@@ -91,6 +91,12 @@ Submit the FLAG obtained
 
 **Solution**
 
+We can see that it is an RSA implementation.
+To decrypt it we need d and for that we nee the totient of (p-1)(q-1).  
+But we are given only p-q, In order to find (p-1)*(q-1) or p*q – (p + q) – 1 we need p+q since p*q = n and known.  
+We know that (p+q)^2 = (p-q)^2 + 4*p*q  
+With this we get p+q using that we get the totient of (p-1)(q-1). Then this becomes a standard RSA problem.
+
 **Flag**
 ```
 cryptX{m0H4mM4d_4Zh4rUdDin}
@@ -104,6 +110,7 @@ Submit the flag by wrapping it within cryptX{}
 ![image](./48112959837082048697.jpg)
 
 **Solution**
+
 
 **Flag**
 ```
