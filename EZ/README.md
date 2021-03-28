@@ -84,6 +84,12 @@ cryptX{**w**hat **w**o**uld** you **cho**o**s**e if **I** ga**ve** **y**ou **a**
 
 **Solution**
 
+The letters in bold are of a typeface eg - **b** where as the standard are the other typeface eg - **a**.  
+From the above consideration we get **baaa babbb aaa bbbaba aa b aabb baa b aaabbb aa a aabaa aba b baaaaaaa**.  
+On decoding the above bacon cipher we get **rohitsharma**.  
+
+For more information - [Bacon Cipher](https://en.wikipedia.org/wiki/Bacon%27s_cipher#Baconian_cipher_example)
+
 **Flag**
 ```
 cryptX{rohitsharma}
