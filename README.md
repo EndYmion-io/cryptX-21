@@ -17,7 +17,6 @@ BroCODE                        200      cryptX{m4H3nDr4s1n9hDh0N1}
 Rookie SA challenge            200      cryptX{4J1NKY4_R5H4N3}
 Vadapav obviously!             200      cryptX{rohitsharma}
 Redundant Key                  200      cryptX{U_4R3_X0R1NG}
-July Us College                200      cryptX{r4hu1dr4v1d}
 
 MEDIUM:
 G@WD                           500      cryptX{73nDuLk4R}
