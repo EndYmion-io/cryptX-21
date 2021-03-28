@@ -66,8 +66,8 @@ c: 37207601978871992194562586639512228182470162740294525
 n: 245841236512478852752909734912575581815967630033049838269083 
 c = (p^e)mod(n)
 ```
-Here since e is 1, p = c + n*i where i is any integer from 1.
-For i = 1 we get the flag.
+Here since e is 1, p = c + n*i where i is any integer from 0.
+For i = 0 we get the flag.
 
 **Flag**
 ```
