@@ -20,33 +20,6 @@ This encrypted message shall clarify how NOT to encrypt a message today! Even if
 cryptX{This encrypted message shall clarify how NOT to encrypt a message today! Even if it was sufficient about 2000 years ago, or to be more precise in the Year 44 BC, nowadays it is not. Today each so-called Script Kiddie would be able to get sensitive information if they were encrypted this way.}
 ```
 
-## BroCODE
-**Chall**
-
-Encryption Scheme:
-
-Step1: All spaces in the plaintext are removed.
-
-Step2: The plaintext is split into 2 parts. The left part consists of all letters that are in  even positions (0-based indexing). Rest letters on the right part.
-
-Step3: Step2 is repeated on the resultant strings until the length of each part is less than or equal to 2 letters.
-
-Step4: All the parts are merged to form the ciphertext.
-
-See example.jpg for an illustrative example of encryption of plaintext```CRYPTO```.
-
-![](./example.jpg)
-
-The ciphertext given below is encrypted using the above scheme
-```mNsnhHnrh411DD3940```
-
-**Solution**
-
-**Flag**
-```
-cryptX{m4H3nDr4s1n9hDh0N1}
-```
-
 ## Rookie SA challenge
 **Chall**
 ```
@@ -123,47 +96,33 @@ Hence XORing it with a string of abc where it is repeated multiple times gives u
 cryptX{U_4R3_X0R1NG}
 ```
 
-## July Us College
+## BroCODE
 **Chall**
-```python
-import string
 
-LOWERCASE_OFFSET = ord("a")
-ALPHABET = string.ascii_lowercase[:16]
+Encryption Scheme:
 
-def b16_encode(plain):
-	enc = ""
-	for c in plain:
-		binary = "{0:08b}".format(ord(c))
-		enc += ALPHABET[int(binary[:4], 2)]
-		enc += ALPHABET[int(binary[4:], 2)]
-	return enc
+Step1: All spaces in the plaintext are removed.
 
-def shift(c, k):
-	t1 = ord(c) - LOWERCASE_OFFSET
-	t2 = ord(k) - LOWERCASE_OFFSET
-	return ALPHABET[(t1 + t2) % len(ALPHABET)]
+Step2: The plaintext is split into 2 parts. The left part consists of all letters that are in  even positions (0-based indexing). Rest letters on the right part.
 
-flag = "redacted"
-key = "redacted"
-assert all([k in ALPHABET for k in key])
-assert len(key) == 1
+Step3: Step2 is repeated on the resultant strings until the length of each part is less than or equal to 2 letters.
 
-b16 = b16_encode(flag)
-enc = ""
-for i, c in enumerate(b16):
-	enc += shift(c, key[i % len(key)])
-print(enc)
-```
-ciphertext:
-```
-epabdfecaodbepabedaodb
-```
-Submit your answer by wrapping it with cryptX{}
+Step4: All the parts are merged to form the ciphertext.
+
+See example.jpg for an illustrative example of encryption of plaintext```CRYPTO```.
+
+![](./example.jpg)
+
+The ciphertext given below is encrypted using the above scheme
+```mNsnhHnrh411DD3940```
 
 **Solution**
 
+We can solve it manually.  
+On creating a string with the first 18 alphabets (since the cipher text is of 18 characters) and encoding it using the scheme gives us a cipher text.  
+Now mapping this with ```mNsnhHnrh411DD3940``` and then making it in order gives us ```m4H3nDr4s1n9hDh0N1```
+
 **Flag**
 ```
-cryptX{r4hu1dr4v1d}
+cryptX{m4H3nDr4s1n9hDh0N1}
 ```
