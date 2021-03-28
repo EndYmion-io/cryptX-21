@@ -19,6 +19,15 @@ Submit the flag by wrapping within cryptX{}
 
 **Solution**
 
+We are given that the blocks are of 7 letters. Observing the first 7 letters of the cipher text kietrcC and the theme of the CTF by previous flags gives us Cricket.
+By this we can conclude the key to be 7526134
+
+Using this we can get the plain text as – 
+```
+CricketwasintroducedtoIndiabyBritishsailorsinthe18thcenturyandthefirstcricketclubwasestablishedin1792NationalcricketteamofIndiadidnotplayitsfirstTestmatchuntil25June1932atLordsbecomingthesixthteamtobegrantedtestcricketstatusFrom1932Indiahadtowaituntil1952foritsfirstTestvictoryInitsfirst50yearsofinternationalcricketIndiawasoneoftheweakerteamswinningonly35ofthefirst196TestmatchesitplayedTheflagis73nDuLk4R
+We can see the flag is at the end of the plaintext - 73nDuLk4R
+
+```
 
 **Flag**
 ```
