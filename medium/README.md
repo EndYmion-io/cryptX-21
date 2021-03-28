@@ -48,6 +48,13 @@ Submit the obtained plaintext in CAPITAL LETTERS by wrapping within cryptX{}
 
 **Solution**
 
+the encryption is just a linear function in modulus
+`y = 17*x + 7 mod 26`
+solving it  
+`x = (y-7)*17^-1 mod 26`  
+
+or we can simply map the substitution letters and reverse it.
+
 **Flag**
 ```
 cryptX{HARMANPREET}
@@ -111,6 +118,10 @@ Submit the flag by wrapping it within cryptX{}
 
 **Solution**
 
+The cipher text is given in the image and one of the primes is the file name.  
+On converting the image to a txt file you can view n and e at the end of the file. 
+Now on solving the problem as a standard RSA you get the plaintext in decimal as 22091801201115081209 .  
+When consecutive 2 digits are converted to the their alphabetic place it translates to **viratkohli** . 
 
 **Flag**
 ```
